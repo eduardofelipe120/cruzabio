@@ -1,0 +1,210 @@
+{
+  "themes": {
+    "fisiologia": {
+      "label": "Fisiologia",
+      "color": "#2ec4b6",
+      "citation": "",
+      "contextText": "",
+      "pdfName": "Neurofisiologia_sensorial_eb.pdf"
+    },
+    "anatomia": {
+      "label": "Anatomia",
+      "color": "#FF6B5B",
+      "citation": "",
+      "contextText": ""
+    },
+    "biomecanica": {
+      "label": "Biomecanica",
+      "color": "#2ec237",
+      "citation": "",
+      "contextText": ""
+    }
+  },
+  "words": {
+    "fisiologia": [
+      {
+        "word": "HOMEOSTASE",
+        "clue": "Equilíbrio dinâmico mantido pelo corpo",
+        "difficulty": "médio"
+      },
+      {
+        "word": "NEURONIO",
+        "clue": "Célula básica do sistema nervoso",
+        "difficulty": "fácil"
+      },
+      {
+        "word": "METABOLISMO",
+        "clue": "Conjunto de reacoes quimicas celulares",
+        "difficulty": "médio"
+      },
+      {
+        "word": "HORMONIO",
+        "clue": "Mensageiro quimico produzido por glandulas",
+        "difficulty": "médio"
+      },
+      {
+        "word": "NEURONIO",
+        "clue": "Celula fundamental do sistema nervoso",
+        "difficulty": "médio"
+      },
+      {
+        "word": "QUIMIORRECEPTOR",
+        "clue": "Célula especializada que detecta mudanças na composição química.",
+        "difficulty": "difícil"
+      },
+      {
+        "word": "MIOELETRICIDADE",
+        "clue": "Estudo dos fenômenos elétricos gerados por tecidos musculares.",
+        "difficulty": "difícil"
+      },
+      {
+        "word": "MECANOCEPTOR",
+        "clue": "Receptor sensivel a estimulos mecanicos ou vibratorios.",
+        "difficulty": "difícil"
+      },
+      {
+        "word": "TRANSDUCAO",
+        "clue": "Transformacao de estimulos do ambiente em potencial eletrico.",
+        "difficulty": "difícil"
+      },
+      {
+        "word": "ESTIMULO",
+        "clue": "Ativador do sistema sensorial, como luz, calor ou dor.",
+        "difficulty": "facil"
+      },
+      {
+        "word": "TRANSDUCAO",
+        "clue": "Processo de converter estimulos fisicos em sinais eletricos nos receptores.",
+        "difficulty": "dificil"
+      },
+      {
+        "word": "SOMESTESIA",
+        "clue": "Modalidade sensorial que abrange tato, dor e sensacoes termicas.",
+        "difficulty": "medio"
+      }
+    ],
+    "anatomia": [
+      {
+        "word": "FEMUR",
+        "clue": "Maior osso do corpo humano",
+        "difficulty": "fácil"
+      },
+      {
+        "word": "FARINGE",
+        "clue": "Porcao da via condutora de ar que conecta cavidades nasal e oral a laringe.",
+        "difficulty": "facil"
+      },
+      {
+        "word": "ALVEOLOS",
+        "clue": "Estruturas onde ocorrem as trocas gasosas no pulmao.",
+        "difficulty": "facil"
+      },
+      {
+        "word": "MUCOSA",
+        "clue": "Camada mais interna de orgaos como traqueia e bronquios.",
+        "difficulty": "medio"
+      },
+      {
+        "word": "CALICIFORMES",
+        "clue": "Celulas secretoras de muco presentes no epitelio ciliado da laringe.",
+        "difficulty": "dificil"
+      },
+      {
+        "word": "PNEUMOCITOS",
+        "clue": "Celulas presentes nos alveolos, podendo ser do tipo I ou II.",
+        "difficulty": "medio"
+      }
+    ],
+    "biomecanica": []
+  },
+  "flashcards": {
+    "biomecanica": [],
+    "fisiologia": [
+      {
+        "front": "O que é Bioeletrogênese?",
+        "back": "É a geração de sinais elétricos pela célula, sendo uma propriedade exclusiva de algumas células, como neurônios e células musculares (esqueléticas, lisas e cardíacas).",
+        "difficulty": "fácil"
+      },
+      {
+        "front": "Como os canais iônicos dependentes de voltagem são abertos?",
+        "back": "Eles são abertos por uma alteração na concentração iônica entre o interior e o exterior da célula, que cria uma mudança no potencial de membrana (charged electric field), causando uma mudança conformacional no canal e abrindo seu poro.",
+        "difficulty": "médio"
+      },
+      {
+        "front": "Qual a principal característica dos receptores sensoriais quanto à especificidade e localização?",
+        "back": "Os receptores sensoriais apresentam especificidade de resposta aos estímulos e possuem localização estratégica no corpo onde melhor captam os estímulos sensoriais.",
+        "difficulty": "médio"
+      },
+      {
+        "front": "Explique o princípio 'tudo ou nada' do Potencial de Ação (PA) e como a intensidade do estímulo afeta o PA.",
+        "back": "O PA é um evento 'tudo ou nada', significando que, uma vez que o estímulo atinja o limiar de disparo, o PA ocorre com amplitude máxima e constante, ou não ocorre. A amplitude (tamanho) do PA não varia; o que muda com a maior intensidade do estímulo é a frequência de Potenciais de Ação gerados.",
+        "difficulty": "difícil"
+      },
+      {
+        "front": "O que é Miastenia Gravis? Qual sua causa e como afeta a junção neuromuscular?",
+        "back": "Miastenia Gravis é uma doença autoimune onde o paciente possui anticorpos que destroem os receptores de acetilcolina na membrana pós-sináptica da junção neuromuscular. Embora a acetilcolina seja produzida e liberada normalmente na fenda sináptica, a quantidade reduzida de receptores impede a transmissão eficiente do sinal nervoso, causando fraqueza e fadiga muscular.",
+        "difficulty": "difícil"
+      }
+    ]
+  },
+  "quiz": {
+    "biomecanica": [],
+    "fisiologia": [
+      {
+        "question": "No contexto da fisiologia, o termo \"homeostasia\" descreve o quê?",
+        "options": [
+          "A capacidade do corpo de se reproduzir.",
+          "A resposta do corpo a estímulos externos.",
+          "O alto nível de controle interno corporal para manter os balanços necessários à sobrevivência.",
+          "A estrutura anatômica de um órgão específico."
+        ],
+        "correctIndex": 2,
+        "difficulty": "médio"
+      },
+      {
+        "question": "Qual é a função principal do sistema sensorial, conforme descrito nos slides?",
+        "options": [
+          "A) Gerar respostas motoras diretas para músculos esqueléticos.",
+          "B) Transformar estímulos do ambiente em impulsos nervosos.",
+          "C) Armazenar memórias de longo prazo e emoções.",
+          "D) Controlar exclusivamente as funções autonômicas do corpo."
+        ],
+        "correctIndex": 1,
+        "difficulty": "fácil"
+      },
+      {
+        "question": "A região da pele onde um estímulo tátil evoca uma resposta sensorial no neurônio é conhecida como:",
+        "options": [
+          "A) Zona de disparo",
+          "B) Campo receptor",
+          "C) Terminal axônico",
+          "D) Junção comunicante"
+        ],
+        "correctIndex": 1,
+        "difficulty": "médio"
+      },
+      {
+        "question": "Em relação à discriminação de dois pontos e aos campos receptores, o que uma maior densidade de receptores com campos receptores pequenos implica para a capacidade sensorial?",
+        "options": [
+          "A) Uma menor capacidade de discriminação espacial, devido à convergência neuronal.",
+          "B) Uma maior capacidade de adaptação rápida ao estímulo constante.",
+          "C) Uma maior capacidade de discriminação espacial, permitindo perceber estímulos distintos.",
+          "D) Uma menor necessidade de neurônios secundários para o processamento da informação."
+        ],
+        "correctIndex": 2,
+        "difficulty": "difícil"
+      },
+      {
+        "question": "O que caracteriza o processo de 'transdução sensorial' na detecção de um estímulo, conforme as etapas descritas?",
+        "options": [
+          "A) A transformação do potencial receptor em potenciais de ação.",
+          "B) A liberação de neurotransmissores no terminal axônico.",
+          "C) A conversão de um estímulo do ambiente em um potencial elétrico (potencial receptor) pelos receptores sensoriais.",
+          "D) A atribuição de significado ao estímulo nas áreas secundárias do córtex cerebral."
+        ],
+        "correctIndex": 2,
+        "difficulty": "médio"
+      }
+    ]
+  }
+}
