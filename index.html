@@ -547,9 +547,16 @@ let isAdminSession = false;
 
 function goToGame(){
   const pwd = document.getElementById('adminPassword').value;
-  document.getElementById('loginScreen').style.display = 'none';
-  if(pwd === ADMIN_PASSWORD){ isAdminSession = true; showAdminMode(); }
-  else showGameMode();
+  // Apenas libera se a senha estiver correta
+  if(pwd === ADMIN_PASSWORD){ 
+    isAdminSession = true; 
+    document.getElementById('loginScreen').style.display = 'none';
+    showAdminMode(); 
+  } else {
+    // Se a senha estiver errada ou vazia, vai para o modo Jogo
+    document.getElementById('loginScreen').style.display = 'none';
+    showGameMode();
+  }
 }
 
 function logout(){
