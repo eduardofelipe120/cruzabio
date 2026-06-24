@@ -1391,17 +1391,21 @@ document.getElementById('fcTheme').addEventListener('change', renderFcList);
 document.getElementById('quizTheme').addEventListener('change', renderQuizList);
 document.getElementById('adminPassword').addEventListener('keydown', (e)=>{ if(e.key==='Enter') goToGame(); });
 
-loadData();
+async function initApp() {
+    await loadData();
+    const secret = window.location.hash.slice(1);
+    
+    document.getElementById('gameMode').classList.remove('active');
+    document.getElementById('adminMode').classList.remove('active');
 
-function initApp(){
-  const secret = window.location.hash.slice(1);
-  if(secret === ADMIN_URL_KEY){
-    document.getElementById('loginScreen').style.display = 'flex';
-  } else {
-    document.getElementById('loginScreen').style.display = 'none';
-    showGameMode();
-  }
+    if(secret === ADMIN_URL_KEY){
+        document.getElementById('loginScreen').style.display = 'flex';
+    } else {
+        document.getElementById('loginScreen').style.display = 'none';
+        showGameMode();
+    }
 }
+
 initApp();
 </script>
 </body>
