@@ -496,27 +496,19 @@ function removePdf(){
 }
 
 /* ============== STORAGE ============== */
-async function loadData() {
-  try {
-    const response = await fetch('cruzabio-data.json?t=' + new Date().getTime());
-    if (response.ok) {
-      const data = await response.json();
+function loadData(){
+  try{
+    const result = localStorage.getItem('cruzabio-data');
+    if(result){
+      const data = JSON.parse(result);
       themes = data.themes || {};
       words = data.words || {};
       flashcards = data.flashcards || {};
       quiz = data.quiz || {};
-    } else { throw new Error("JSON não encontrado"); }
-  } catch (e) {
-    const saved = localStorage.getItem('cruzabio-data');
-    if (saved) {
-      const data = JSON.parse(saved);
-      themes = data.themes || {};
-      words = data.words || {};
-      flashcards = data.flashcards || {};
-      quiz = data.quiz || {};
+      return;
     }
-  }
-}
+  } catch(e){ console.error('Erro ao carregar dados:', e); }
+
   themes = {
     'fisiologia': { label:'Fisiologia', color:'#2EC4B6', citation:'', contextText:'' },
     'anatomia': { label:'Anatomia', color:'#FF6B5B', citation:'', contextText:'' },
@@ -547,16 +539,9 @@ let isAdminSession = false;
 
 function goToGame(){
   const pwd = document.getElementById('adminPassword').value;
-  // Apenas libera se a senha estiver correta
-  if(pwd === ADMIN_PASSWORD){ 
-    isAdminSession = true; 
-    document.getElementById('loginScreen').style.display = 'none';
-    showAdminMode(); 
-  } else {
-    // Se a senha estiver errada ou vazia, vai para o modo Jogo
-    document.getElementById('loginScreen').style.display = 'none';
-    showGameMode();
-  }
+  document.getElementById('loginScreen').style.display = 'none';
+  if(pwd === ADMIN_PASSWORD){ isAdminSession = true; showAdminMode(); }
+  else showGameMode();
 }
 
 function logout(){
@@ -1398,16 +1383,17 @@ document.getElementById('fcTheme').addEventListener('change', renderFcList);
 document.getElementById('quizTheme').addEventListener('change', renderQuizList);
 document.getElementById('adminPassword').addEventListener('keydown', (e)=>{ if(e.key==='Enter') goToGame(); });
 
-async function initApp() {
-    await loadData();
-    
-    // Esconde a tela de login ao iniciar
-    document.getElementById('loginScreen').style.display = 'none';
-    
-    // Força o modo jogo
-    showGameMode();
-}
+loadData();
 
+function initApp(){
+  const secret = window.location.hash.slice(1);
+  if(secret === ADMIN_URL_KEY){
+    document.getElementById('loginScreen').style.display = 'flex';
+  } else {
+    document.getElementById('loginScreen').style.display = 'none';
+    showGameMode();
+  }
+}
 initApp();
 </script>
 </body>
