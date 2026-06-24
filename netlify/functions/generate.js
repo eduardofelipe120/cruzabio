@@ -28,23 +28,37 @@ exports.handler = async function (event) {
     return { statusCode: 400, body: JSON.stringify({ error: 'JSON inválido no corpo da requisição.' }) };
   }
 
-  try {
-    const response = await fetch(
-      'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent',
-      {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'x-goog-api-key': GEMINI_API_KEY
-        },
-        body: JSON.stringify({
-          contents: [{ parts }],
-          generationConfig: { responseMimeType: 'application/json' }
-        })
-      }
-    );
+  const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 
-    const data = await response.json();
+  try {
+    let response, data;
+    const maxAttempts = 3;
+
+    for (let attempt = 1; attempt <= maxAttempts; attempt++) {
+      response = await fetch(
+        'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent',
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'x-goog-api-key': GEMINI_API_KEY
+          },
+          body: JSON.stringify({
+            contents: [{ parts }],
+            generationConfig: { responseMimeType: 'application/json' }
+          })
+        }
+      );
+
+      data = await response.json();
+
+      // 503 = modelo sobrecarregado do lado do Google, geralmente passageiro - tenta de novo
+      if (response.status === 503 && attempt < maxAttempts) {
+        await sleep(attempt * 1500); // espera 1.5s, depois 3s antes de tentar de novo
+        continue;
+      }
+      break;
+    }
 
     if (!response.ok || data.error) {
       const msg = (data.error && data.error.message) ? data.error.message : `Erro HTTP ${response.status}`;
