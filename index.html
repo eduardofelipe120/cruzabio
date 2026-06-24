@@ -498,7 +498,7 @@ function removePdf(){
 /* ============== STORAGE ============== */
 function loadData(){
   try{
-    const result = localStorage.getItem('cruzabio-data');
+    const result = localStorage.getItem('cruzabio-data.json');
     if(result){
       const data = JSON.parse(result);
       themes = data.themes || {};
