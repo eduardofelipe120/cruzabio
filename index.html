@@ -496,19 +496,27 @@ function removePdf(){
 }
 
 /* ============== STORAGE ============== */
-function loadData(){
-  try{
-    const result = localStorage.getItem('cruzabio-data.json');
-    if(result){
-      const data = JSON.parse(result);
+async function loadData() {
+  try {
+    const response = await fetch('cruzabio-data.json?t=' + new Date().getTime());
+    if (response.ok) {
+      const data = await response.json();
       themes = data.themes || {};
       words = data.words || {};
       flashcards = data.flashcards || {};
       quiz = data.quiz || {};
-      return;
+    } else { throw new Error("JSON não encontrado"); }
+  } catch (e) {
+    const saved = localStorage.getItem('cruzabio-data');
+    if (saved) {
+      const data = JSON.parse(saved);
+      themes = data.themes || {};
+      words = data.words || {};
+      flashcards = data.flashcards || {};
+      quiz = data.quiz || {};
     }
-  } catch(e){ console.error('Erro ao carregar dados:', e); }
-
+  }
+}
   themes = {
     'fisiologia': { label:'Fisiologia', color:'#2EC4B6', citation:'', contextText:'' },
     'anatomia': { label:'Anatomia', color:'#FF6B5B', citation:'', contextText:'' },
