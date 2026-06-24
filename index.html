@@ -1400,17 +1400,12 @@ document.getElementById('adminPassword').addEventListener('keydown', (e)=>{ if(e
 
 async function initApp() {
     await loadData();
-    const secret = window.location.hash.slice(1);
     
-    document.getElementById('gameMode').classList.remove('active');
-    document.getElementById('adminMode').classList.remove('active');
-
-    if(secret === ADMIN_URL_KEY){
-        document.getElementById('loginScreen').style.display = 'flex';
-    } else {
-        document.getElementById('loginScreen').style.display = 'none';
-        showGameMode();
-    }
+    // Esconde a tela de login ao iniciar
+    document.getElementById('loginScreen').style.display = 'none';
+    
+    // Força o modo jogo
+    showGameMode();
 }
 
 initApp();
