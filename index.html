@@ -496,23 +496,18 @@ function removePdf(){
 }
 
 /* ============== STORAGE ============== */
-async function loadData() {
-  try {
-    // Busca o arquivo físico que você subiu no GitHub
-    const response = await fetch('cruzabio-data.json'); 
-    const data = await response.json();
-    
-    themes = data.themes || {};
-    words = data.words || {};
-    flashcards = data.flashcards || {};
-    quiz = data.quiz || {};
-    
-    console.log("Dados carregados com sucesso do ficheiro JSON!");
-  } catch (e) {
-    console.error('Erro ao carregar ficheiro JSON:', e);
-    // Caso falhe, tenta carregar um padrão ou avisa o utilizador
-  }
-}
+function loadData(){
+  try{
+    const result = localStorage.getItem('cruzabio-data');
+    if(result){
+      const data = JSON.parse(result);
+      themes = data.themes || {};
+      words = data.words || {};
+      flashcards = data.flashcards || {};
+      quiz = data.quiz || {};
+      return;
+    }
+  } catch(e){ console.error('Erro ao carregar dados:', e); }
 
   themes = {
     'fisiologia': { label:'Fisiologia', color:'#2EC4B6', citation:'', contextText:'' },
